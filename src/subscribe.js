@@ -15,10 +15,14 @@ function parse(message) {
 function defaultDispatch(topic, message, packet) {
     const { state } = this;
     const m = parse(message);
+    console.log("subscribe message is -- ", message);
+    console.log("subscribe topic is -- ", topic);
+    console.log("subscribe m value is -- ", m);
     const newData = [
         m,
         ...state.data
     ];
+    console.log("subscribe new data value is -- ", newData);
     this.setState({ data: newData });
 };
 
